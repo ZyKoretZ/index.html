@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Interaktif: Pemusatan Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="bg-animation"></div>
+
+    <div class="app-container fade-in">
+        <header class="app-header">
+            <div class="badge">Matematika SMA / Kelas X</div>
+            <h1>Misteri Penjualan Kopi ☕</h1>
+            <p>Eksplorasi Interaktif Ukuran Pemusatan Data (Mean, Median, Modus)</p>
+        </header>
+
+        <section class="story-board">
+            <h3>Kasus Hari Ini:</h3>
+            <p>Koperasi Mahasiswa sedang menganalisis penjualan "Es Kopi Susu" selama 5 hari terakhir. Penjualannya
+                cukup stabil di angka 20-40 gelas per hari. Namun, hari ini tiba-tiba ada pesanan mendadak untuk rapat
+                rektorat sebanyak <strong>100 gelas!</strong></p>
+            <div class="instruction-box">
+                <strong>Tugas Eksplorasi:</strong><br>
+                Coba geser salah satu slider data menjadi angka 100. Amati angka mana yang berubah drastis (Mean atau
+                Median?). Menurutmu, angka mana yang lebih jujur menggambarkan penjualan sehari-hari?
+            </div>
+        </section>
+
+        <div class="toolbar">
+            <button class="btn btn-add" onclick="addData()">+ Tambah Hari</button>
+            <button class="btn btn-remove" onclick="removeData()">- Kurangi Hari</button>
+        </div>
+
+        <div class="controls-container" id="sliders"></div>
+
+        <div class="chart-container">
+            <canvas id="statChart"></canvas>
+        </div>
+
+        <div class="results-container">
+            <div class="result-card mean-card">
+                <h3>Mean (Rata-rata)</h3>
+                <span class="value" id="mean-display">0</span>
+                <div class="tooltip">Total penjualan dibagi jumlah hari</div>
+            </div>
+            <div class="result-card median-card">
+                <h3>Median (Nilai Tengah)</h3>
+                <span class="value" id="median-display">0</span>
+                <div class="tooltip">Nilai pas di tengah setelah data diurutkan</div>
+            </div>
+            <div class="result-card modus-card">
+                <h3>Modus (Sering Muncul)</h3>
+                <span class="value" id="modus-display">-</span>
+                <div class="tooltip">Angka penjualan yang paling sering terjadi</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
